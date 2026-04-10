@@ -62,7 +62,7 @@ form .btn-enviar input:hover {
 
 /* ESTILO O CABEÇALHO */
 header {
-    padding: 15px 4%;
+    padding: 10px 4%;
     background-color: #5C3B2A;
     position: fixed;
     width: 100%;
@@ -96,6 +96,11 @@ header nav.menu-desktop ul li {
     padding: 0 40px;
 }
 
+.logo img{
+    max-width: 120px;
+    margin: 0;
+}
+
 /* ESTILO DO TOPO DO SITE */
 
 section.topo-do-site {
@@ -116,7 +121,7 @@ section.topo-do-site .flex {
 
 .topo-do-site {
     min-height: 100vh;
-    background-image: url("images/fundo.png");
+    background-image: url("../images/fundo.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
