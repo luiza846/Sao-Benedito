@@ -357,6 +357,10 @@ footer .line-footer p a {
     text-decoration: none;
 }
 
+.logo-footer img{
+    max-width: 100px;
+}
+
 /* RESPONSIVIDADE */
 
 @media screen and (max-width: 1020px) {
