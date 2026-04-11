@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Quem Somos</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #2b1d14, #1a120c);
+    color: #f5efe9;
+}
+
+/* container */
+.container {
+    width: 85%;
+    margin: auto;
+}
+
+/* HERO COM IMAGEM */
+.hero {
+    position: relative;
+    height: 400px;
+    margin-top: 40px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0px 15px 40px rgba(0,0,0,0.7);
+}
+
+/* imagem */
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
+    transition: transform 1s ease;
+}
+
+/* zoom suave */
+.hero:hover img {
+    transform: scale(1.05);
+}
+
+/* overlay escuro */
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0,0,0,0.8), transparent);
+}
+
+/* texto em cima */
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50px;
+    transform: translateY(-50%);
+    max-width: 500px;
+    z-index: 2;
+}
+
+.hero-text h1 {
+    font-size: 40px;
+    margin: 0;
+}
+
+.hero-text p {
+    margin-top: 15px;
+    opacity: 0.9;
+}
+
+/* seção texto */
+.texto-box {
+    margin-top: 40px;
+    background: rgba(58, 38, 27, 0.6);
+    padding: 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.5);
+}
+
+/* linha premium */
+.linha {
+    width: 60px;
+    height: 4px;
+    background: #a67c52;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+/* cards */
+.baixo {
+    display: flex;
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.box {
+    flex: 1;
+    padding: 30px;
+    border-radius: 20px;
+    background: rgba(58, 38, 27, 0.7);
+    text-align: center;
+    transition: 0.3s;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.box:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0px 20px 40px rgba(0,0,0,0.7);
+}
+
+.box h3 {
+    margin-bottom: 10px;
+}
+
+/* responsivo */
+@media(max-width: 900px) {
+    .hero-text {
+        left: 20px;
+    }
+
+    .baixo {
+        flex-direction: column;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- HERO COM IMAGEM -->
+    <div class="hero">
+        <img src="criancas.jpg" alt="Crianças">
+
+        <div class="hero-text">
+            <h1>Transformando Vidas</h1>
+            <p>
+                Tecnologia + solidariedade para fazer a diferença na comunidade.
+            </p>
+        </div>
+    </div>
+
+    <!-- TEXTO -->
+    <div class="texto-box">
+        <div class="linha"></div>
+
+        <h2>Quem Somos</h2>
+
+        <p>
+            Somos um grupo de estudantes de Engenharia da Computação desenvolvendo um projeto integrador com o objetivo de aplicar nossos conhecimentos na prática e gerar impacto social.
+        </p>
+
+        <p>
+            Criamos este site de doações para a Igreja Dom Bosco, com a finalidade de facilitar a ajuda a quem precisa e incentivar a solidariedade através da tecnologia.
+        </p>
+    </div>
+
+    <!-- MISSÃO E VISÃO -->
+    <div class="baixo">
+
+        <div class="box">
+            <h3>Missão</h3>
+            <p>
+                Utilizar a tecnologia para promover solidariedade e facilitar doações para a comunidade.
+            </p>
+        </div>
+
+        <div class="box">
+            <h3>Visão</h3>
+            <p>
+                Ser um projeto que impacta positivamente a sociedade através da inovação e colaboração.
+            </p>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
