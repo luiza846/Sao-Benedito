@@ -60,6 +60,10 @@ form .btn-enviar input:hover {
     transition: .2s;
 }
 
+.btn-social button i{
+    color: #fff;
+}
+
 /* ESTILO O CABEÇALHO */
 header {
     padding: 10px 4%;
@@ -96,7 +100,7 @@ header nav.menu-desktop ul li {
     padding: 0 40px;
 }
 
-.logo img{
+.logo img {
     max-width: 120px;
     margin: 0;
 }
@@ -199,6 +203,7 @@ section.doacao .flex {
 
 section.quem-somos {
     padding: 80px 4%;
+    background-color: #4A2F1B;
 }
 
 section.quem-somos .flex {
@@ -207,7 +212,7 @@ section.quem-somos .flex {
 }
 
 .quem-somos .txt-quem-somos {
-    color: #5C3B2A;
+    color: #fff;
 }
 
 .quem-somos .txt-quem-somos h2 {
@@ -217,8 +222,7 @@ section.quem-somos .flex {
 }
 
 .quem-somos .txt-quem-somos h2 span {
-    color: #4A2F1B;
-    display: block;
+    color: #fff;
 }
 
 .quem-somos .txt-quem-somos p {
@@ -231,48 +235,40 @@ section.quem-somos .flex {
 section.missao-visao {
     padding: 80px 4%;
     box-shadow: 0 0 40px 10px rgba(255, 255, 255, 0.166);
+    display: flex;
+    align-items: center;
+    min-height: 50vh;
+}
+
+section.missao-visao .interface{
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 section.missao-visao .flex {
     justify-content: space-around;
-    margin-top: 60px;
-}
-
-.img-port {
-    width: 360px;
-    height: 460px;
-    background-size: cover;
-    background-position: 100% 0%;
-    transition: 8s;
-    cursor: pointer;
-    border-radius: 40px;
-    position: relative;
-}
-
-.img-port:hover {
-    background-position: 100% 100%;
-}
-
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #000000b5;
-    border-radius: 40px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    font-weight: 600;
-    color: black;
-    opacity: 0;
-    transition: .5s;
+    gap: 40px;
 }
 
-.overlay:hover {
-    opacity: 1;
+.missao-visao .missao-visao-box {
+    text-align: center;
+    color: #4A2F1B;
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 0 20px rgba(95, 95, 95, 0.384);
+}
+
+.missao-visao .missao-visao-box i {
+    font-size: 35px;
+    color: #4A2F1B;
+}
+
+.missao-visao .missao-visao-box h3 {
+    font: 28px;
+    margin: 15px 0;
 }
 
 /* ESTILO ENTRE EM CONTATO */
@@ -294,11 +290,11 @@ form {
 form input,
 form textarea {
     width: 100%;
-    background-color: rgb(60, 60, 60);
-    border: 0;
+    background-color: #fff;
+    border: 1px solid #4A2F1B;
     outline: 0;
-    padding: 20px 15px;
-    border-radius: 15px;
+    padding: 13px 13px;
+    border-radius: 20px;
     color: black;
     font-size: 18px;
 }
@@ -332,6 +328,7 @@ form .btn-enviar input {
 
 footer {
     padding: 40px 4%;
+    background-color: #4A2F1B;
     box-shadow: 0 0 40px 10px rgba(255, 255, 255, 0.166);
 }
 
@@ -344,7 +341,7 @@ footer .line-footer {
 }
 
 .borda {
-    border-top: 2px solid #00FF08;
+    border-top: 2px solid #ffffff;
 }
 
 footer .line-footer p i {
@@ -353,11 +350,11 @@ footer .line-footer p i {
 }
 
 footer .line-footer p a {
-    color: black;
+    color: white;
     text-decoration: none;
 }
 
-.logo-footer img{
+.logo-footer img {
     max-width: 100px;
 }
 
