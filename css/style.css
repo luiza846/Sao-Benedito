@@ -60,7 +60,7 @@ form .btn-enviar input:hover {
     transition: .2s;
 }
 
-.btn-social button i{
+.btn-social button i {
     color: #fff;
 }
 
@@ -169,6 +169,7 @@ section.topo-do-site .flex {
 /* ESTILO DOACAO */
 section.doacao {
     padding: 40px 4%;
+    padding-top: 100px;
 }
 
 section.doacao .flex {
@@ -240,7 +241,7 @@ section.missao-visao {
     min-height: 50vh;
 }
 
-section.missao-visao .interface{
+section.missao-visao .interface {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -273,8 +274,37 @@ section.missao-visao .flex {
 
 /* ESTILO ENTRE EM CONTATO */
 
-section.formulario {
-    padding: 80px 4%;
+section.contato {
+    padding-top: 4.4%;
+    display: flex;
+    gap: 40px;
+    align-items: stretch;
+    height: 100%;
+}
+
+.contato .info {
+    flex: 1;
+    box-shadow: 20px 0 30px -10px rgba(0, 0, 0, 0.25);
+    background-image: url("../images/igreja.jpg");
+    background-size: cover;
+    /* cobre toda a div */
+    background-position: center;
+    /* centraliza */
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+
+}
+
+.info-txt {
+    color: #fff;
+    background-color: #5c3b2ad0;
+    padding: 7% 7%;
+}
+
+.contato .formulario {
+    flex: 1;
+    padding: 5% 5%;
 }
 
 form {
@@ -298,12 +328,6 @@ form textarea {
     color: black;
     font-size: 18px;
 }
-
-/* 
-form input::placeholder{
-    color: green;
-}
-*/
 
 form textarea {
     resize: none;
@@ -357,6 +381,81 @@ footer .line-footer p a {
 .logo-footer img {
     max-width: 100px;
 }
+
+/* AJUDA */
+
+.ajuda {
+    padding: 15% 5%;
+    display: flex;
+    justify-content: center;
+    gap: 7%;
+    min-height: 100vh;
+    background-image: url("../images/solid.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.btn-ajuda button {
+
+    padding: 10px 40px;
+    width: 390px;
+    height: 190px;
+    font-size: 29px;
+    font-weight: 600;
+    background-color: #4A2F1B;
+    color: white;
+    border: 0;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+/* preciso de ajuda */
+.preciso-ajuda {
+    background-image: url("../images/meajuda.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+
+.preciso-ajuda h2{
+    font-size: 35px;
+}
+
+.formulario-preciso-ajuda {
+    padding-top: 8%;
+    padding-bottom: 10%;
+}
+.opcoes{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: left;
+    align-items: flex-start;
+}
+
+.opcoes label{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.opcoes input[type="checkbox"]{
+    width: 18px;
+    height: 18px;
+}
+
+.opcao label,
+.opcao input[type="checkbox"]{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* indicar */
 
 /* RESPONSIVIDADE */
 
@@ -465,7 +564,7 @@ footer .line-footer p a {
         width: 100%;
     }
 
-    /* doacao */
+    /* doacao*/
 
     section.doacao {
         padding: 40px 8%;
