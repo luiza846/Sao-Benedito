@@ -78,13 +78,16 @@
 
             <div class="formulario-preciso-ajuda">
                 <div class="interface">
-                    <h2 class="titulo">Você não está sozinho(a).</h2>
-                    <h2> Conte com a gente!</h2>
+                    <h2 class="titulo">Indicar também é cuidar.</h2>
+                    <h2>Ajude alguém a encontrar apoio.</h2>
                     <form action="">
-                        <input type="text" name="" id="" placeholder="Seu nome" required>
-                        <input type="text" name="" id="" placeholder="Bairro / Cidade" required>
+                        <input type="text" name="" id="" placeholder="Seu nome / empresa" required>
                         <input type="text" name="" id="" placeholder="Telefone">
-                        <label for="opcoes">Escolha uma opção:</label>
+
+                        <h3>Sobre quem precisa</h3>
+                        <input type="text" name="" id="" placeholder="Nome da pessoa / família / local" required>
+                        <input type="text" name="" id="" placeholder="Bairro / Cidade" required>
+                        <label for="opcoes">Tipo de ajuda necessária:</label>
                         <select id="opcoes" name="opcoes">
                             <option value="opcao1">Opção 1</option>
                             <option value="opcao2">Opção 2</option>
@@ -109,7 +112,18 @@
                                 <label for="opcao4">Outros</label>
                             </div>
                         </div> -->
-                        <textarea name="" id="" placeholder="Breve descrição da ajuda" required></textarea>
+                        <textarea name="" id="" placeholder="Descrição da situação" required></textarea>
+                        <div class="opcoes">
+                            <input type="file" name="arquivos" class="btn btn-success" multiple />
+                            <div class="opcao">
+                                <input type="checkbox" id="opcao1" name="interesses" value="1">
+                                <label for="opcao1">Confirmo que as informações são verdadeiras</label>
+                            </div>
+                            <div class="opcao">
+                                <input type="checkbox" id="opcao2" name="interesses" value="1">
+                                <label for="opcao2">Entendo que o pedido será analisado</label>
+                            </div>
+                        </div>
                         <div class="btn-enviar">
                             <input type="submit" value="ENVIAR">
                         </div>

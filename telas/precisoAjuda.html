@@ -80,38 +80,34 @@
                 <div class="interface">
                     <h2 class="titulo">Você não está sozinho(a).</h2>
                     <h2> Conte com a gente!</h2>
-                    <form action="">
-                        <input type="text" name="" id="" placeholder="Seu nome" required>
-                        <input type="text" name="" id="" placeholder="Bairro / Cidade" required>
-                        <input type="text" name="" id="" placeholder="Telefone">
-                        <label for="opcoes">Escolha uma opção:</label>
+                    <form action="" method="">
+                        <input type="text" name="nome" id="" placeholder="Seu nome" required>
+                        <input type="text" name="bairro" id="" placeholder="Bairro" required>
+                        <input type="text" name="cidade" id="" placeholder="Cidade" required>
+                        <input type="text" name="telefone" id="" placeholder="Telefone">
+                        <label for="opcoes">Tipo de ajuda necessária:</label>
                         <select id="opcoes" name="opcoes">
                             <option value="opcao1">Opção 1</option>
                             <option value="opcao2">Opção 2</option>
                             <option value="opcao3">Opção 3</option>
                         </select>
-                        <!-- <div class="opcoes">
-                            <label for="opcoes">Tipo de ajuda (selecione um ou mais opções):</label>
+
+                        <input type="file" name="arquivos" class="btn btn-success" multiple />
+                        <textarea name="descricao" id="" placeholder="Breve descrição da ajuda" required></textarea>
+
+                        <div class="opcoes">
                             <div class="opcao">
                                 <input type="checkbox" id="opcao1" name="interesses" value="1">
-                                <label for="opcao1">Cesta Básica</label>
+                                <label for="opcao1">Autorizo o uso das informações para fins sociais </label>
                             </div>
                             <div class="opcao">
                                 <input type="checkbox" id="opcao2" name="interesses" value="1">
-                                <label for="opcao2">Roupas</label>
+                                <label for="opcao2">Entendo que o pedido será analisado </label>
                             </div>
-                            <div class="opcao">
-                                <input type="checkbox" id="opcao3" name="interesses" value="1">
-                                <label for="opcao3">Despesa Médica</label>
-                            </div>
-                            <div class="opcao">
-                                <input type="checkbox" id="opcao4" name="interesses" value="1">
-                                <label for="opcao4">Outros</label>
-                            </div>
-                        </div> -->
-                        <textarea name="" id="" placeholder="Breve descrição da ajuda" required></textarea>
+                        </div>
+
                         <div class="btn-enviar">
-                            <input type="submit" value="ENVIAR">
+                            <input type="submit" name="submit" id="submit" value="ENVIAR">
                         </div>
                     </form>
                 </div>
@@ -150,3 +146,4 @@
 </body>
 
 </html>
+
