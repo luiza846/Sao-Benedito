@@ -105,22 +105,26 @@ header nav.menu-desktop ul li {
     margin: 0;
 }
 
-/* ESTILO DO TOPO DO SITE */
 
 section.topo-do-site {
     padding: 40px 4%;
     text-align: center;
     display: flex;
     justify-content: center;
-    padding-top: 100px;
     background-color: #e1dab3;
+}
+
+section.topo-do-site button {
+    background-color: #3F165E;
 }
 
 section.topo-do-site .flex {
     align-items: center;
-    justify-content: center;
-    /* espaco entre elementos */
     gap: 90px;
+}
+
+main {
+    padding-top: 70px;
 }
 
 .topo-do-site {
@@ -129,20 +133,24 @@ section.topo-do-site .flex {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
     display: flex;
     align-items: center;
 }
 
+.txt-topo-site {
+    width: 60%;
+}
+
 .topo-do-site h1 {
-    color: black;
-    font-size: 35px;
-    line-height: 40px;
+    color: white;
+    font-size: 45px;
+    line-height: 50px;
     padding-bottom: 7%;
+    font-weight: normal;
 }
 
 .topo-do-site .txt-topo-site h1 span {
-    color: #4A2F1B;
+    color: #E6A961;
 }
 
 .topo-do-site .txt-topo-site p {
@@ -177,6 +185,8 @@ section.doacao .flex {
 }
 
 .doacao .doacao-box {
+    text-align: center;
+    width: 25%;
     color: #5C3B2A;
     border-radius: 20px;
     padding: 40px;
@@ -200,11 +210,30 @@ section.doacao .flex {
     margin: 15px 0;
 }
 
+.icon img{
+    width: 100px;
+    height: 100px;
+
+}
+
 /* ESTILO DO QUEM SOMOS */
 
 section.quem-somos {
     padding: 80px 4%;
-    background-color: #4A2F1B;
+    background-color: #3B1E4D;
+}
+
+.btn-social-qs button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background-color: #3B1E4D;
+    font-size: 22px;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: .2s;
+    color: #fff;
 }
 
 section.quem-somos .flex {
