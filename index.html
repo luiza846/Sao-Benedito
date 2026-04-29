@@ -17,11 +17,11 @@
     <link rel="stylesheet" href="css/style.css">
 
     <script src="logica/menu.js" defer></script>
+    <script src="logica/carrossel.js" defer></script>
 
     <title>São Benedito</title>
 </head>
 
-<p>teste</p>
 <body>
 
     <header>
@@ -93,9 +93,84 @@
         </section>
         <!-- topo do site -->
 
+        <section class="ajudar-pessoas">
+            <h2 class="titulo">CONHEÇA HISTÓRIAS DE QUEM PRECISA DA <span>SUA AJUDA</span></h2>
+
+            <div class="carousel-container">
+                <button class="nav prev"><i class="bi bi-chevron-compact-left"></i></button>
+
+                <div class="carousel-viewport">
+
+                    <div class="carousel-track">
+
+                        <div class="card">
+                            <div class="img-ajuda">
+                                <img src="images/pessoa-ajudar1.jpg" alt="Ajuda ">
+                            </div>
+                            <div class="historia">
+                                <h3>Ajude a Maria Silva</h3>
+                                <p>uma breve historia aqui. preciso da ajuda porque...</p>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="img-ajuda">
+                                <img src="images/agasalho-doar.png" alt="Ajuda ">
+                            </div>
+                            <div class="historia">
+                                <h3>Doação de cesta básica para o bairro Embauzinho</h3>
+                                <p>uma breve historia aqui. preciso da ajuda porque...</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="img-ajuda">
+                                <img src="images/doar-comida.jpg" alt="Ajuda ">
+                            </div>
+                            <div class="historia">
+                                <h3>Ajude os moradores de rua</h3>
+                                <p>uma breve historia aqui. preciso da ajuda porque...</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="img-ajuda">
+                                <img src="images/roupas.png" alt="Ajuda ">
+                            </div>
+                            <div class="historia">
+                                <h3>Ajude essa pessoa</h3>
+                                <p>uma breve historia aqui. preciso da ajuda porque...</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="img-ajuda">
+                                <img src="images/roupas.png" alt="Ajuda ">
+                            </div>
+                            <div class="historia">
+                                <h3>Ajude essa pessoa</h3>
+                                <p>uma breve historia aqui. preciso da ajuda porque...</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="img-ajuda">
+                                <img src="images/roupas.png" alt="Ajuda ">
+                            </div>
+                            <div class="historia">
+                                <h3>Ajude essa pessoa</h3>
+                                <p>uma breve historia aqui. preciso da ajuda porque...</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <button class="nav next"><i class="bi bi-chevron-compact-right"></i></button>
+            </div>
+
+
+        </section>
+
         <section class="doacao">
             <div class="interface">
-                <h2 class="titulo">SUA DOAÇÃO VAI DIRETO PARA QUEM <span>PRECISA</span></h2>
+                <h2 class="titulo">O QUE VOCÊ PODE <span>DOAR</span></h2>
 
                 <div class="flex">
                     <div class="doacao-box">
@@ -131,6 +206,17 @@
             <!-- interface -->
         </section>
         <!-- doacao -->
+        <section class="localizacao">
+            <div class="mapa"><iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3679.860922779822!2d-45.12427182505183!3d-22.733410131697006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ccc8e87304b6a5%3A0xae211153b67b5cfe!2sSantu%C3%A1rio%20S%C3%A3o%20Benedito!5e0!3m2!1spt-BR!2sbr!4v1777502384859!5m2!1spt-BR!2sbr"
+                    width="500" height="350" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+            <div class="infos">
+                <h2 class="titulo">ONDE<span> ESTAMOS?</span></h2>
+                <h3>Estamos aqui para receber você, caso queira fazer sua doação pessoalmente e conhecer nossa igreja.
+                </h3>
+            </div>
+        </section>
 
         <section class="quem-somos" id="quem-somos">
             <div class="interface">
