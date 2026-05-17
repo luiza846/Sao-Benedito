@@ -10,6 +10,16 @@ body {
     height: 100vh;
 }
 
+html,
+body {
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 .interface {
     max-width: 1280px;
     margin: 0 auto;
@@ -111,11 +121,11 @@ section.topo-do-site {
     text-align: center;
     display: flex;
     justify-content: center;
-    background-color: #e1dab3;
 }
 
 section.topo-do-site button {
-    background-color: #3F165E;
+    background-color: #dbdbdb;
+    color: #3B1E4D;
 }
 
 section.topo-do-site .flex {
@@ -128,8 +138,10 @@ main {
 }
 
 .topo-do-site {
-    min-height: 100vh;
-    background-image: url("../images/fundo.png");
+    box-sizing: border-box;
+    min-height: 550px;
+    padding: 0 4%;
+    background-image: url("../images/saosebastiao.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -138,7 +150,7 @@ main {
 }
 
 .txt-topo-site {
-    width: 60%;
+    width: 40%;
 }
 
 .topo-do-site h1 {
@@ -150,7 +162,7 @@ main {
 }
 
 .topo-do-site .txt-topo-site h1 span {
-    color: #E6A961;
+    color: #ffb35b;
 }
 
 .topo-do-site .txt-topo-site p {
@@ -519,10 +531,10 @@ footer .line-footer p a {
     justify-content: center;
     gap: 7%;
     min-height: 100vh;
-    background-image: url("../images/solid.jpg");
+    /* background-image: url("../images/solid.jpg");
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
 }
 
 .btn-ajuda button {
@@ -592,6 +604,23 @@ footer .line-footer p a {
 }
 
 /* indicar */
+
+/* telas do adm */
+.login {
+    display: flex;
+    min-height: 100vh;
+    background-image: url("../images/saosebastiao.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    align-items: center;
+    justify-content: center;
+}
+
+.interface-login {
+    padding: 10%;
+    background-color: #fff;
+}
 
 /* RESPONSIVIDADE */
 
