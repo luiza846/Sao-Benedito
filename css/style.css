@@ -102,7 +102,8 @@ header nav.menu-desktop a:hover {
 }
 
 header nav ul {
-    list-style-type: none;
+        margin: 0 !important;
+    padding: 0 !important;
 }
 
 header nav.menu-desktop ul li {
@@ -134,7 +135,7 @@ section.topo-do-site .flex {
 }
 
 main {
-    padding-top: 70px;
+    padding-top: 65px;
 }
 
 .topo-do-site {
@@ -233,7 +234,7 @@ main {
 }
 
 .img-ajuda img {
-    width: 200px;
+    width: 370px;
     height: 200px;
     object-fit: cover;
     /*pra nao ficar esticado*/
@@ -311,9 +312,11 @@ section.doacao .flex {
     font-size: 70px;
     color: #4A2F1B;
 }
-
+h3 {
+  font-size: 24px !important;
+}
 .doacao .doacao-box h3 {
-    font: 28px;
+    font: 28px !important;
     margin: 15px 0;
 }
 
@@ -620,6 +623,11 @@ footer .line-footer p a {
 .interface-login {
     padding: 10%;
     background-color: #fff;
+}
+
+/* tela de mensagem de sucesso */
+.modal-body{
+    text-align: center;
 }
 
 /* RESPONSIVIDADE */

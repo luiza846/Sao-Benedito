@@ -1,3 +1,10 @@
+<?php
+session_start();
+require './conexao/conexao.php';
+mysqli_set_charset($conexao, "utf8mb4");
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -14,16 +21,18 @@
     <!-- BOOTSTRAP ICON -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <!-- BOOSTRAP FIM -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-
     <script src="logica/menu.js" defer></script>
     <script src="logica/carrossel.js" defer></script>
 
-    <title>São Benedito</title>
+    <title>São Sebastião</title>
 </head>
 
 <body>
-
+    <?php
+    include './telas/sucesso.php';
+    ?>
     <header>
         <div class="interface">
             <div class="logo">
@@ -35,7 +44,7 @@
             <!--usar a clase menu-desktop para torná-lo responsivo-->
             <nav class="menu-desktop">
                 <ul>
-                    <li><a href="index.html">INÍCIO</a></li>
+                    <li><a href="index.php">INÍCIO</a></li>
                     <li><a href="telas/doacao.html">DOAÇÕES</a></li>
                     <li><a href="telas/ajuda.html">PEDIR DE AJUDA</a></li>
                     <li><a href="#quem-somos">QUEM SOMOS</a></li>
@@ -55,7 +64,7 @@
                 </div>
                 <nav>
                     <ul>
-                        <li><a href="index.html">INÍCIO</a></li>
+                        <li><a href="index.php">INÍCIO</a></li>
                         <li><a href="telas/doacao.html">DOAÇÕES</a></li>
                         <li><a href="#">PEDIR DE AJUDA</a></li>
                         <li><a href="#quem-somos">QUEM SOMOS</a></li>
@@ -94,7 +103,7 @@
         <!-- topo do site -->
 
         <section class="ajudar-pessoas">
-            <h2 class="titulo">CONHEÇA HISTÓRIAS DE QUEM PRECISA DA <span>SUA AJUDA</span></h2>
+            <h2 class="titulo">CONHEÇA HISTÓRIA DE QUEM PRECISA DA <span>SUA AJUDA</span></h2>
 
             <div class="carousel-container">
                 <button class="nav prev"><i class="bi bi-chevron-compact-left"></i></button>
@@ -102,62 +111,62 @@
                 <div class="carousel-viewport">
 
                     <div class="carousel-track">
+                        <?php
 
-                        <div class="card">
-                            <div class="img-ajuda">
-                                <img src="images/pessoa-ajudar1.jpg" alt="Ajuda ">
-                            </div>
-                            <div class="historia">
-                                <h3>Ajude a Maria Silva</h3>
-                                <p>uma breve historia aqui. preciso da ajuda porque...</p>
-                            </div>
-                        </div>
+                        $sql = "SELECT 
+                    so.id_solicitacao,
+                    so.tipo_ajuda,
+                    so.descricao,
+                    so.protocolo,
+                    so.foto,
+                    so.data_solicitacao,
+                    so.status_solicitacao,
 
-                        <div class="card">
-                            <div class="img-ajuda">
-                                <img src="images/agasalho-doar.png" alt="Ajuda ">
-                            </div>
-                            <div class="historia">
-                                <h3>Doação de cesta básica para o bairro Embauzinho</h3>
-                                <p>uma breve historia aqui. preciso da ajuda porque...</p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="img-ajuda">
-                                <img src="images/doar-comida.jpg" alt="Ajuda ">
-                            </div>
-                            <div class="historia">
-                                <h3>Ajude os moradores de rua</h3>
-                                <p>uma breve historia aqui. preciso da ajuda porque...</p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="img-ajuda">
-                                <img src="images/roupas.png" alt="Ajuda ">
-                            </div>
-                            <div class="historia">
-                                <h3>Ajude essa pessoa</h3>
-                                <p>uma breve historia aqui. preciso da ajuda porque...</p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="img-ajuda">
-                                <img src="images/roupas.png" alt="Ajuda ">
-                            </div>
-                            <div class="historia">
-                                <h3>Ajude essa pessoa</h3>
-                                <p>uma breve historia aqui. preciso da ajuda porque...</p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="img-ajuda">
-                                <img src="images/roupas.png" alt="Ajuda ">
-                            </div>
-                            <div class="historia">
-                                <h3>Ajude essa pessoa</h3>
-                                <p>uma breve historia aqui. preciso da ajuda porque...</p>
-                            </div>
-                        </div>
+                    s.nome_solicitante,
+                    s.cidade_solicitante,
+                    s.endereco_solicitante,
+                    s.telefone_solicitante,
+
+                    i.nome_indicador,
+                    i.telefone_indicador
+
+                FROM solicitacoes so
+                INNER JOIN solicitantes s 
+                    ON s.id_solicitante = so.id_solicitante
+                LEFT JOIN indicadores i 
+                    ON i.id_indicador = so.id_indicador
+                WHERE so.status_solicitacao IN 
+                    ('Aprovada', 'Aprovada - Criada pela Igreja')
+                ORDER BY so.data_solicitacao DESC
+                ";
+
+                        $query = mysqli_query($conexao, $sql);
+
+                        if (!$query) {
+                            echo "<p>Erro na consulta</p>";
+                        } elseif (mysqli_num_rows($query) > 0) {
+                            while ($solicitacao = mysqli_fetch_assoc($query)) {
+
+                        ?>
+
+                                <div class="card">
+
+                                    <div class="img-ajuda">
+                                        <img src="/upload/<?= basename($solicitacao['foto']) ?>">
+                                    </div>
+                                    <div class="historia">
+                                        <h3>Ajude <?= $solicitacao['nome_solicitante']; ?></h3>
+                                        <p><?= $solicitacao['descricao']; ?></p>
+                                    </div>
+                                </div>
+                        <?php
+                            }
+                        } else {
+                            echo "<h5>solicitacao não encontrada</h5>";
+                        }
+
+                        ?>
+
 
                     </div>
                 </div>
@@ -177,27 +186,27 @@
                         <div class="icon">
                             <img src="images/comida.png" alt="Alimentos não perecíveis">
                         </div>
-                        <h3>Alimentos não perecíveis</h3>
+                        <h3 class="titulo-doacao">Alimentos não perecíveis</h3>
                     </div>
 
                     <div class="doacao-box">
                         <div class="icon">
                             <img src="images/roupas.png" alt="Roupas (agasalhos)">
                         </div>
-                        <h3>Roupas (agasalhos)</h3>
+                        <h3 class="titulo-doacao">Roupas (agasalhos)</h3>
                     </div>
 
                     <div class="doacao-box">
                         <div class="icon">
                             <img src="images/cobertor.png" alt="Cobertores">
                         </div>
-                        <h3>Cobertores</h3>
+                        <h3 class="titulo-doacao">Cobertores</h3>
                     </div>
                     <div class="doacao-box">
                         <div class="icon">
                             <img src="images/higiene.png" alt="Itens para higiene pessoal">
                         </div>
-                        <h3>Itens para higiene pessoal</h3>
+                        <h3 class="titulo-doacao">Itens para higiene pessoal</h3>
                     </div>
                     <!-- doacao box -->
                 </div>
@@ -215,8 +224,8 @@
             </div>
             <div class="infos">
                 <h2 class="titulo">ONDE<span> ESTAMOS?</span></h2>
-                <h3>Estamos aqui para receber você, caso queira fazer sua doação pessoalmente e conhecer nossa igreja.
-                </h3>
+                <h5>Estamos aqui para receber você, caso queira fazer sua doação pessoalmente e conhecer nossa igreja.
+                </h5>
             </div>
         </section>
 
@@ -291,5 +300,6 @@
     </main>
 
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
 </html>

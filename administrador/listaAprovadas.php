@@ -24,16 +24,13 @@ mysqli_set_charset($conexao, "utf8mb4");
     <?php
     require 'mensagem.php';
     ?>
-
-    
     <div class="row">
       <div class="col-md-12">
         <div class="card">
           <div class="card-header">
 
             <h4>Lista de solicitantes
-              <a href="listaAprovadas.php" class="btn btn-outline-secondary float-end ms-2">Relatório</a>
-              <a href="criarAjuda.php" class="btn btn-primary float-end">Adicionar Ajuda</a>
+              <a href="solicitacoes.php" class="btn btn-danger float-end">Voltar</a>
             </h4>
 
           </div>
@@ -61,10 +58,9 @@ mysqli_set_charset($conexao, "utf8mb4");
                   INNER JOIN solicitantes s 
                       ON s.id_solicitante = so.id_solicitante
                   WHERE so.status_solicitacao IN 
-                    ('Em Andamento')
+                    ('Aprovada', 'Aprovada - Criada pela Igreja')
                 ORDER BY so.data_solicitacao DESC
                 ";
-
                 $solicitantes = mysqli_query($conexao, $sql);
 
                 if (mysqli_num_rows($solicitantes) > 0) {
@@ -79,12 +75,8 @@ mysqli_set_charset($conexao, "utf8mb4");
                       <td>
                         <a href="solicitante-view.php?id=<?= $solicitante['id_solicitacao'] ?>" class="btn btn-secondary btn-sm"><span class="bi-eye-fill"></span>&nbsp;Visualizar</a>
                         <form action="../logica/acoes.php" method="POST" class="d-inline">
-                          <!-- <a onClick="return confirm('Tem certeza que deseja aprovar?')" name="aprovar_solicitante" class="btn btn-success btn-sm"><span class="bi bi-check-lg"></span>&nbsp;Aprovar</a> -->
-                          <button onClick="return confirm('Tem certeza que deseja aprovar?')" type="submit" name="aprovar_solicitante" value="<?= $solicitante['id_solicitacao'] ?>" class="btn btn-success btn-sm">
-                            <span class="bi bi-check-lg"></span>&nbsp;Aprovar
-                          </button>
-                          <button onClick="return confirm('Tem certeza que deseja reprovar?')" type="submit" name="delete_solicitante" value="<?= $solicitante['id_solicitacao'] ?>" class="btn btn-danger btn-sm">
-                            <span class="bi bi-x-lg"></span>&nbsp;Reprovar
+                          <button onClick="return confirm('Tem certeza que deseja excluir?')" type="submit" name="delete_solicitante" value="<?= $solicitante['id_solicitacao'] ?>" class="btn btn-danger btn-sm">
+                            <span class="bi bi-x-lg"></span>&nbsp;Não exibir mais
                           </button>
                         </form>
                       </td>
@@ -92,7 +84,7 @@ mysqli_set_charset($conexao, "utf8mb4");
                 <?php
                   }
                 } else {
-                  echo '<h5>Não há solicitações no momento</h5>';
+                  echo '<h5>Nenhum usuário encontrado</h5>';
                 }
                 ?>
               </tbody>

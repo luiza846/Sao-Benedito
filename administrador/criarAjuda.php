@@ -25,7 +25,7 @@ require 'conexao.php';
                         </h4>
                     </div>
                     <div class="card-body">
-                        <form action="acoes.php" method="POST" enctype="multipart/form-data">
+                        <form action="../logica/acoes.php" method="POST" enctype="multipart/form-data">
                             <div class="mb-3">
                                 <label>Nome</label>
                                 <input type="text" name="nome" class="form-control">
@@ -68,7 +68,7 @@ require 'conexao.php';
                                 <input type="text" name="descricao" class="form-control">
                             </div>
                             <div class="mb-3">
-                                <button type="submit" name="create_usuario" class="btn btn-primary">Salvar</button>
+                                <button type="submit" name="create_ajuda" class="btn btn-primary">Salvar</button>
                             </div>
                         </form>
                     </div>
