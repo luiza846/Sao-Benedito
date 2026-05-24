@@ -8,8 +8,9 @@ require_once __DIR__ . '/../conexao/conexao.php';
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Usuarios</title>
+    <title>Preciso de Ajuda</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
 <body>
@@ -46,6 +47,7 @@ require_once __DIR__ . '/../conexao/conexao.php';
                                 <label for="opcoes" class="form-label">Tipo de ajuda necessária:</label>
 
                                 <select id="tipo_ajuda" name="tipo_ajuda" class="form-select">
+                                    <option value="" selected disabled>Selecione</option>
                                     <option value="Cesta básica">Cesta básica</option>
                                     <option value="Roupas (agasalhos)">Roupas (agasalhos)</option>
                                     <option value="Cobertores">Cobertores</option>
@@ -54,14 +56,25 @@ require_once __DIR__ . '/../conexao/conexao.php';
                                 </select>
                             </div>
                             <div class="mb-3">
-                                <label for="foto" class="form-label">Envie sua foto</label>
+                                <label for="foto" class="form-label">Envie sua foto:</label>
                                 <input class="form-control" type="file" name="foto" accept="image/*" onchange="previewImagem(event)" required>
                             </div>
 
                             <img id="preview" class="img-thumbnail d-none" width="200">
                             <div class="mb-3">
-                                <label>Descrição</label>
-                                <input type="text" name="descricao" class="form-control">
+                                <label>Descrição:</label>
+                                <p class="d-flex align-items-center gap-2">
+                                    <i class="bi bi-info-circle text-primary fs-5"></i>
+                                    <span class="informacoes" style="color: #6c757d;">
+                                        Explique como você pode ser ajudado (chave PIX ou endereço para doações) e compartilhe brevemente sua história e o motivo da sua necessidade
+                                    </span>
+                                </p>
+                                <textarea
+                                    name="descricao"
+                                    id="descricao"
+                                    class="form-control"
+                                    rows="5"
+                                    placeholder="Descreva sua necessidade com o máximo de detalhes possível"></textarea>
                             </div>
                             <div class="mb-3">
                                 <button type="submit" name="create_usuario" class="btn btn-primary">Salvar</button>

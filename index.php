@@ -45,7 +45,7 @@ mysqli_set_charset($conexao, "utf8mb4");
             <nav class="menu-desktop">
                 <ul>
                     <li><a href="index.php">INÍCIO</a></li>
-                    <li><a href="telas/doacao.html">DOAÇÕES</a></li>
+                    <li><a href="telas/doacao.html">AJUDE A IGREJA</a></li>
                     <li><a href="telas/ajuda.html">PEDIR DE AJUDA</a></li>
                     <li><a href="#quem-somos">QUEM SOMOS</a></li>
                     <li><a href="#quem-somos">MISSÃO E VISÃO</a></li>
@@ -65,8 +65,8 @@ mysqli_set_charset($conexao, "utf8mb4");
                 <nav>
                     <ul>
                         <li><a href="index.php">INÍCIO</a></li>
-                        <li><a href="telas/doacao.html">DOAÇÕES</a></li>
-                        <li><a href="#">PEDIR DE AJUDA</a></li>
+                        <li><a href="telas/doacao.html">AJUDE A IGREJA</a></li>
+                        <li><a href="telas/ajuda.html">PEDIR DE AJUDA</a></li>
                         <li><a href="#quem-somos">QUEM SOMOS</a></li>
                         <li><a href="#quem-somos">MISSÃO E VISÃO</a></li>
                         <li><a href="telas/contato.html">CONTATO</a></li>
@@ -149,14 +149,23 @@ mysqli_set_charset($conexao, "utf8mb4");
 
                         ?>
 
-                                <div class="card">
+                                <div class="card"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#modalAjuda"
+                                    data-nome="<?= $solicitacao['nome_solicitante']; ?>"
+                                    data-descricao="<?= htmlspecialchars($solicitacao['descricao']); ?>"
+                                    data-cidade="<?= $solicitacao['cidade_solicitante']; ?>"
+                                    data-endereco="<?= $solicitacao['endereco_solicitante']; ?>"
+                                    data-telefone="<?= $solicitacao['telefone_solicitante']; ?>"
+                                    data-indicador="<?= $solicitacao['nome_indicador']; ?>"
+                                    data-foto="/upload/<?= basename($solicitacao['foto']) ?>">
 
                                     <div class="img-ajuda">
                                         <img src="/upload/<?= basename($solicitacao['foto']) ?>">
                                     </div>
                                     <div class="historia">
                                         <h3>Ajude <?= $solicitacao['nome_solicitante']; ?></h3>
-                                        <p><?= $solicitacao['descricao']; ?></p>
+                                        <p>Tipo: <?= $solicitacao['tipo_ajuda']; ?></p>
                                     </div>
                                 </div>
                         <?php
@@ -271,6 +280,32 @@ mysqli_set_charset($conexao, "utf8mb4");
         </section>
         <!-- portifolio -->
 
+        <!-- tela flutuante -->
+        <div class="modal fade" id="modalAjuda" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalTitulo"></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <img id="modalFoto" class="img-fluid mb-3 rounded" alt="Foto da solicitação">
+
+                        <hr>
+                        <p><strong>Cidade:</strong> <span id="modalCidade"></span></p>
+                        <p><strong>Descrição: </strong> <span id="modalDescricao"></span></p>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
         <footer>
             <div class="interface">
                 <div class="line-footer">
@@ -303,3 +338,28 @@ mysqli_set_charset($conexao, "utf8mb4");
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
 </html>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+  const modal = document.getElementById('modalAjuda');
+
+  modal.addEventListener('show.bs.modal', function (event) {
+
+    const card = event.relatedTarget.closest('.card');
+
+    document.getElementById('modalTitulo').textContent =
+      'Ajude ' + card.dataset.nome;
+
+    document.getElementById('modalDescricao').textContent =
+      card.dataset.descricao;
+
+    document.getElementById('modalCidade').textContent =
+      card.dataset.cidade;
+
+    document.getElementById('modalFoto').src =
+      card.dataset.foto;
+  });
+
+});
+</script>
