@@ -5,6 +5,9 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+body{
+    background:red !important;
+}
 
 body {
     height: 100vh;
@@ -49,7 +52,7 @@ h2.titulo {
 }
 
 h2.titulo span {
-    color: #4A2F1B;
+    color: #701705;
 }
 
 button:hover,
@@ -77,7 +80,7 @@ form .btn-enviar input:hover {
 /* ESTILO O CABEÇALHO */
 header {
     padding: 10px 4%;
-    background-color: #5C3B2A;
+    background-color: #9C2007;
     position: fixed;
     width: 100%;
     z-index: 1;
@@ -167,7 +170,7 @@ main {
 }
 
 .topo-do-site .txt-topo-site p {
-    color: #5C3B2A;
+    color: #701705;
     margin: 40px 0;
 }
 
@@ -247,7 +250,7 @@ main {
 
 .nav {
     background: none;
-    color: #4A2F1B;
+    color: #9C2007;
     border: none;
     padding: 10px;
     cursor: pointer;
@@ -335,7 +338,7 @@ h3 {
 
 section.quem-somos {
     padding: 80px 4%;
-    background-color: #3B1E4D;
+    background-color: #701705;
 }
 
 .btn-social-qs button {
