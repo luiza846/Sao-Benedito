@@ -76,7 +76,7 @@ mysqli_set_charset($conexao, "utf8mb4");
                         <a href="solicitante-view.php?id=<?= $solicitante['id_solicitacao'] ?>" class="btn btn-secondary btn-sm"><span class="bi-eye-fill"></span>&nbsp;Visualizar</a>
                         <form action="../logica/acoes.php" method="POST" class="d-inline">
                           <button onClick="return confirm('Tem certeza que deseja excluir?')" type="submit" name="delete_solicitante" value="<?= $solicitante['id_solicitacao'] ?>" class="btn btn-danger btn-sm">
-                            <span class="bi bi-x-lg"></span>&nbsp;Não exibir mais
+                            <span class="bi bi-x-lg"></span>&nbsp;Não exibir mais no site
                           </button>
                         </form>
                       </td>
