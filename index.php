@@ -37,7 +37,7 @@ mysqli_set_charset($conexao, "utf8mb4");
         <div class="interface">
             <div class="logo">
                 <a href="#">
-                    <img src="images/logo.png" alt="Logo do portfólio">
+                    <img src="images/logoo.png" alt="Logo do portfólio">
                 </a>
             </div><!--logo-->
 
@@ -45,7 +45,7 @@ mysqli_set_charset($conexao, "utf8mb4");
             <nav class="menu-desktop">
                 <ul>
                     <li><a href="index.php">INÍCIO</a></li>
-                    <li><a href="telas/doacao.html">AJUDE A IGREJA</a></li>
+                    <li><a href="telas/doacao.html">DOAÇÕES</a></li>
                     <li><a href="telas/ajuda.html">PEDIR DE AJUDA</a></li>
                     <li><a href="#quem-somos">QUEM SOMOS</a></li>
                     <li><a href="#quem-somos">MISSÃO E VISÃO</a></li>
@@ -311,7 +311,7 @@ mysqli_set_charset($conexao, "utf8mb4");
                 <div class="line-footer">
                     <div class="flex">
                         <div class="logo-footer">
-                            <img src="images/logo.png" alt="">
+                            <img src="images/logoo.png" alt="">
                         </div>
                         <!-- logo footer -->
                         <div class="btn-social">
